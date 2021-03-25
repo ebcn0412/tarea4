@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Tarea4
 {
-    class NodoAvl
+    class NodoAvl : Nodo
     {
+
+        public int fe;
+        public NodoAvl(Object valor) : base(valor)
+        {
+            fe = 0;
+        }
+
+        public NodoAvl(Object valor, NodoAvl ramaIzdo, NodoAvl ramaDcho) : base(ramaIzdo, valor, ramaDcho)
+        {
+            fe = 0;
+        }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Tarea4
 {
-    class Comparador
+    interface Comparador
     {
+        bool igualQue(Object q);
+        bool menorQue(Object q);
+        bool menorIgualQue(Object q);
+        bool mayorQue(Object q);
+        bool mayorIgualQue(Object q);
     }
 }
