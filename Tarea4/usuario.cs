@@ -6,54 +6,58 @@ using System.Threading.Tasks;
 
 namespace Tarea4
 {
-    class Usuario : Comparador
+    class usuario : Comparador
     {
-        string Tarea { get; set; }
-        int Duracion { get; set; }
-        double Avance { get; set; }
-        string Programador { get; set; }
+        public string nombreTarea { get; set; }
+        public int duracion { get; set; }
+        public double avance { get; set; }
+        public string nombreProgramador{ get; set; }
 
-        public Usuario(string tarea, int duracion, double avance, string programador)
+        public usuario()
         {
-            Tarea = tarea;
-            Duracion = duracion;
-            Avance = avance;
-            Programador = programador;
+
+        }
+
+        public usuario(string tarea, int dura, double avan, string programador)
+        {
+            nombreTarea = nombreTarea;
+            duracion = duracion;
+            avance = avance;
+            nombreProgramador = nombreProgramador;
         }
 
         bool Comparador.igualQue(object op2)
         {
-            Usuario p2 = (Usuario)op2;
-            return Tarea == p2.Tarea;
+            usuario p2 = (usuario)op2;
+            return duracion == p2.duracion;
         }
 
         bool Comparador.menorQue(object op2)
         {
-            Usuario p2 = (Usuario)op2;
-            return Tarea == p2.Tarea;
+            usuario p2 = (usuario)op2;
+            return duracion < p2.duracion;
         }
 
         bool Comparador.menorIgualQue(object op2)
         {
-            Usuario p2 = (Usuario)op2;
-            return Tarea == p2.Tarea;
+            throw new NotImplementedException();
+
         }
 
         bool Comparador.mayorQue(object op2)
         {
-            Usuario p2 = (Usuario)op2;
-            return Tarea == p2.Tarea;
+            usuario p2 = (usuario)op2;
+            return duracion > p2.duracion;
         }
 
         bool Comparador.mayorIgualQue(object op2)
         {
-            Usuario p2 = (Usuario)op2;
-            return Tarea == p2.Tarea;
+            throw new NotImplementedException();
         }
 
         public override string ToString()
         {
-            return "(" + Tarea + " - " + Duracion + " - " + Avance + " " + Programador + ")";
+            return "(" + nombreTarea + " - " + duracion + " - " + avance + " " + nombreProgramador + ")";
         }
 
 
