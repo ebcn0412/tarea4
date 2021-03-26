@@ -16,6 +16,7 @@ namespace Tarea4
         public Form1()
         {
             InitializeComponent();
+            txt5.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,7 +34,27 @@ namespace Tarea4
             usu.avance = Convert.ToDouble(txt3.Text);
             usu.nombreProgramador = txt4.Text;
             arbolito.insertar(usu);
-            
+            txtTarea.Text = "";
+            txt2.Text = "";
+            txt3.Text = "";
+            txt4.Text = "";
+            txt5.Text = "";
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            usuario usu;
+            usu = new usuario();
+            // int busqueda = int.Parse(buscar.Text);
+            //usu.avance = Convert.ToInt32(buscar.Text);
+            arbolito.buscar(usu);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txt5.Text = "";
+            txt5.Text = ArbolBinarioBusqueda.inorden(arbolito.raizArbol());
         }
     }
 }

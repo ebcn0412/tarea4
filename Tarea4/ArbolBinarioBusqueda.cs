@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Tarea4
 {
@@ -23,19 +24,21 @@ namespace Tarea4
             if (raiz == null)
                 return null;
             else
-                return buscar(raizArbol(), dato);
+                MessageBox.Show("Encontrado");
+                return Buscar(raizArbol(), dato);
+
         }
 
-        protected Nodo buscar(Nodo raizSub, Comparador buscado)
+        protected Nodo Buscar(Nodo raizSub, Comparador buscado)
         {
             if (raizSub == null)
                 return null;
             else if (buscado.igualQue(raizSub.valorNodo()))
                 return raizSub;
             else if (buscado.menorQue(raizSub.valorNodo()))
-                return buscar(raizSub.subarbolIzdo(), buscado);
+                return Buscar(raizSub.subarbolIzdo(), buscado);
             else
-                return buscar(raizSub.subarbolDcho(), buscado);
+                return Buscar(raizSub.subarbolDcho(), buscado);
         }
         /// <summary>
         /// 
@@ -52,6 +55,7 @@ namespace Tarea4
             {
                 if (dato.igualQue(raizSub.valorNodo()))
                     encontrado = true;
+                
                 else if (dato.menorQue(raizSub.valorNodo()))
                     raizSub = raizSub.subarbolIzdo();
                 else
@@ -66,6 +70,8 @@ namespace Tarea4
             dato = (Comparador)valor;
             raiz = insertar(raiz, dato);
         }
+
+
 
         //método interno para realizar la operación
         protected Nodo insertar(Nodo raizSub, Comparador dato)
